@@ -9,9 +9,7 @@ public abstract class BankAccount {
         this.balance = balance;
     }
 
-
-    public abstract void calculateInterest() {
-    }
+    public abstract void calculateInterest();
 
     public void deposit(double amount) {
         if (amount >= 0) {
@@ -23,7 +21,7 @@ public abstract class BankAccount {
     }
 
     public void withDraw(double amount) {
-        if (amount >= 0) {
+        if (amount <= 500 && amount >= 0 && balance >= amount) {
             balance -= amount;
             System.out.println("Withdraw " + amount + "$");
         } else {
@@ -31,17 +29,15 @@ public abstract class BankAccount {
         }
     }
 
-    public double getBalance(){
+    public double getBalance() {
         return balance;
     }
 
-    public String getAccountNumber(){
+    public String getAccountNumber() {
         return accountNumber;
     }
 
-    public String getAccountHolderName(){
+    public String getAccountHolderName() {
         return accountHolderName;
     }
-
 }
-

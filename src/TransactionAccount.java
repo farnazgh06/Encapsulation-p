@@ -1,7 +1,8 @@
 public class TransactionAccount extends BankAccount {
     private final double overDraftLimit = 500.00;
 
-    public AccountTransaction (String accountHolderName, String accountNumber, double initialBalance){
+    public TransactionAccount (String accountNumber , String accountHolderName , double initialBalance){
+        super(accountHolderName, accountNumber, initialBalance);
 
     }
 
@@ -12,7 +13,7 @@ public class TransactionAccount extends BankAccount {
 
     @Override
     public void withDraw(double amount) {
-        if (amount >= 0 && amount <= (balance + overDraftLimit)){
+        if (amount <= 500 && amount >= 0 && amount <= (balance + overDraftLimit)){
             balance -= amount;
             System.out.println("withDraw " + amount + "$");
         }

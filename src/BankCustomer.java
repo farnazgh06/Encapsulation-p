@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 
 public class BankCustomer {
-    private ArrayList<BankAccount> accountList;
+    private ArrayList<BankAccount> accountList = new ArrayList<>();
 
     public void addAccount(BankAccount account){
-        this.accountList = new ArrayList<>();
         accountList.add(account);
     }
 
@@ -18,14 +17,15 @@ public class BankCustomer {
     public BankAccount findAccount(String accountNumber) {
         for (BankAccount account : accountList) {
             if (account.getAccountNumber().equals(accountNumber)) {
-                return account;
                 System.out.println("Name : " + account.getAccountHolderName());
                 System.out.println("Account Number : " + account.getAccountNumber());
                 System.out.println("Balance : " + account.getBalance());
+                return account;
             }
         }
-        return null;
+
         System.out.println("there is no account");
+        return null;
 
     }
 }

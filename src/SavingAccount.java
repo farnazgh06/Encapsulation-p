@@ -1,8 +1,8 @@
 public class SavingAccount extends BankAccount {
     private final double interestRate = 0.03;
 
-    public SavingAccount(String accountNumber,String accountHolderNumber ,double initialBalance){
-
+    public SavingAccount (String accountHolderNumber, String accountNumber ,double initialBalance){
+            super(accountNumber, accountHolderNumber,initialBalance);
     }
 
     @Override
